@@ -8,4 +8,37 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Properties\recursos\FotosPlatos\burguer.jpg" />
+    <None Remove="Properties\recursos\FotosPlatos\cerdoagridulce.jpg" />
+    <None Remove="Properties\recursos\FotosPlatos\dumplings.jpg" />
+    <None Remove="Properties\recursos\FotosPlatos\fajitas.jpg" />
+    <None Remove="Properties\recursos\FotosPlatos\hotdog.jpg" />
+    <None Remove="Properties\recursos\FotosPlatos\tacos.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Properties\recursos\FotosPlatos\burguer.jpg" />
+    <Resource Include="Properties\recursos\FotosPlatos\cerdoagridulce.jpg" />
+    <Resource Include="Properties\recursos\FotosPlatos\dumplings.jpg" />
+    <Resource Include="Properties\recursos\FotosPlatos\fajitas.jpg" />
+    <Resource Include="Properties\recursos\FotosPlatos\hotdog.jpg" />
+    <Resource Include="Properties\recursos\FotosPlatos\tacos.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

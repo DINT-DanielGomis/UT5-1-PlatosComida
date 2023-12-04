@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <DataTemplate>
-            <Border>
+        <DataTemplate x:Key="PlatoTemplate">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5" >
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" Color="Black" ShadowDepth="2" Opacity="0.7"/>
+                </Border.Effect>
                 <StackPanel Orientation="Vertical">
-                    <Label></Label>
-                    <Image></Image>
+                    <Label Content="{Binding Nombre}" HorizontalAlignment="Center" Foreground="White"></Label>
+                    <Image Source="{Binding Imagen}"  Stretch="UniformToFill"></Image>
                     <DockPanel>
                         <Image DockPanel.Dock="Left"></Image>
                         <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
@@ -33,7 +36,9 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="230"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0">
+            <ListBox Grid.Column="0" 
+                     ItemsSource="{Binding Path= ListaPlatos}" 
+                     ItemTemplate="{StaticResource PlatoTemplate}">
                 <ItemsPanelTemplate>
                     <WrapPanel></WrapPanel>
                 </ItemsPanelTemplate>    

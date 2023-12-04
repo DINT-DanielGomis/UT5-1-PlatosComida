@@ -20,9 +20,14 @@ namespace UT5_1_PlatosComida
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowVM vm = new MainWindowVM();
         public MainWindow()
         {
+            
             InitializeComponent();
+            this.DataContext = vm;
         }
+
+        
     }
 }
